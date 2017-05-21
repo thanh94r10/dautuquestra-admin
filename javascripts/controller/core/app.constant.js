@@ -8,7 +8,7 @@
         .module('app')
         .constant("CONSTANT", {
             // BASE_URL: "http://localhost:17453",
-            BASE_URL: "http://dautuquestra.azurewebsites.net",
+            BASE_URL: "https://dautuquestra.azurewebsites.net",
             VERSION: '1.0',
         })
 })();
