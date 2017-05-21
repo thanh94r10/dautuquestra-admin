@@ -1,0 +1,23 @@
+.page-form{
+    margin-top: 10px !important;
+    padding-top: 10px !important;
+}
+.login-ForgotPassword {
+    padding-top: 55px !important;
+}
+.page-form .input-icon i{
+    margin-top: 31px !important;
+}
+#signin-page .page-form .header-content h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#signin-page {
+    /* background: url('http://swlabs.co/madmin/code/images/bg/1.jpg') center center fixed; */
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 5px;
+    /* height: 1000px; */
+}

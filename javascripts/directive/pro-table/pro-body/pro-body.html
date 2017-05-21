@@ -1,0 +1,17 @@
+<tr ng-if="vm.actionForRow === undefined && vm.contentList.length !== 0" ng-repeat="content in vm.contentList" ng-init="rowIndex = $index">
+    <td style="vertical-align: middle; text-align: center">{{vm.amount * vm.currentPage + ($index + 1)}}</td>
+    <td ng-repeat="cell in vm.titleList" ng-bind-html="content[cell]" class="table-fontBlack"></td>
+    <td ng-if="vm.actionList.length !==0 && vm.actionList.length !== undefined">
+        <a ng-repeat="action in vm.actionList track by $index " type="button" ng-if="action.type === 'button' || !action.type" title="{{action.title|translate}}"
+            class="{{action.color}} btn-action" ng-click="vm.methodList[$index](content)" href="javascript:void(0);"><i class="{{action.icon}}"></i>{{action.label}}</a>
+        <div class="checkbox" ng-repeat="action in vm.actionList track by $index" ng-if="action.type === 'checkbox'">
+            <label>
+                <input type="checkbox" ng-checked="vm.arrayChoose[rowIndex]" ng-click="vm.methodList[$index](content)">
+                <span class="text">&nbsp;</span>
+            </label>
+        </div>
+    </td>
+</tr>
+<tr ng-if="vm.contentList.length === 0">
+    <td colspan="{{vm.titleList.length + 2}}">Không tìm thấy kết quả</td>
+</tr>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<title>Đàu tư QUESTRA</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<link rel="icon" href="style/icon/quydautuicon/quydautu1green.png">
+	<!-- inject:css -->
+	<link rel="stylesheet" href="javascripts/controller/core/homepage.css">
+	<link rel="stylesheet" href="javascripts/controller/post-manager/post-manager.css">
+	<link rel="stylesheet" href="javascripts/controller/update-post/update-post.css">
+	<link rel="stylesheet" href="javascripts/controller/login-page/login-page.css">
+	<link rel="stylesheet" href="javascripts/controller/post-tin/post-tin.css">
+	<link rel="stylesheet" href="javascripts/directive/pro-table/pro-body/pro-body.css">
+	<link rel="stylesheet" href="javascripts/directive/pro-table/pro-header/pro-header.css">
+	<link rel="stylesheet" href="javascripts/directive/pro-table/pro-pagination/paginnation.css">
+	<link rel="stylesheet" href="style/component/AdminLTE.min.css">
+	<link rel="stylesheet" href="style/component/_all-skins.min.css">
+	<link rel="stylesheet" href="style/component/angular-loading.css">
+	<link rel="stylesheet" href="style/component/angular-toastr.css">
+	<link rel="stylesheet" href="style/component/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="style/component/font-awesome.min.css">
+	<link rel="stylesheet" href="style/component/jquery.bxslider.css">
+	<link rel="stylesheet" href="style/component/loading-bar.min.css">
+	<link rel="stylesheet" href="style/component/main.css">
+	<link rel="stylesheet" href="style/component/orange-blue.css">
+	<link rel="stylesheet" href="style/component/select2.min.css">
+	<link rel="stylesheet" href="style/component/skin-blue.css">
+	<link rel="stylesheet" href="style/component/sweetalert.css">
+	<!-- endinject -->
+	<!-- Include Required Prerequisites -->
+	<!--slick-->
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+
+
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+	<link rel="stylesheet" href="bower_components/angular-input-stars-directive/angular-input-stars.css" />
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/angular-timezone-selector/dist/angular-timezone-selector.css" />
+	<link rel="stylesheet" href="bower_components/angular-ui-select/dist/select.css" />
+	<link rel="stylesheet" href="bower_components/ng-table/dist/ng-table.min.css" />
+	<link rel="stylesheet" href="bower_components/ng-tags-input/ng-tags-input.min.css" />
+	<link rel="stylesheet" href="bower_components/perfect-scrollbar/src/perfect-scrollbar.css" />
+	<link rel="stylesheet" href="bower_components/bootstrap-daterangepicker/daterangepicker-bs3.css" />
+	<link rel="stylesheet" href="bower_components/angular-hotkeys/build/hotkeys.css" />
+	<link rel="stylesheet" href="bower_components/animate.css/animate.css" />
+	<link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.css" />
+	<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+	<link rel="stylesheet" href="bower_components/angular-input-stars-directive/angular-input-stars.css" />
+	<link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+	<!-- endbower -->
+</head>
+
+<body>
+	<div ui-view style="height: 100%" class="ui-view-wrapper"></div>
+</body>
+<script src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/angular-ui-select/dist/select.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script src="bower_components/ng-tags-input/ng-tags-input.js"></script>
+<script src="bower_components/angular-input-stars-directive/angular-input-stars.js"></script>
+<script src="bower_components/angular-websocket/dist/angular-websocket.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="//cdn.ckeditor.com/4.5.11/full/ckeditor.js"></script>
+<!--<script src="http://localhost:17453/signalr/hubs"></script>-->
+<!-- inject:js -->
+<script src="javascripts/app.js"></script>
+<script src="javascripts/service/admin.service.js"></script>
+<script src="javascripts/service/post.service.js"></script>
+<script src="javascripts/service/statistic.service.js"></script>
+<script src="javascripts/service/util.service.js"></script>
+<script src="javascripts/controller/core/app.constant.js"></script>
+<script src="javascripts/controller/core/start.config.js"></script>
+<script src="javascripts/controller/core/start.controller.js"></script>
+<script src="javascripts/controller/post-manager/post-manager.config.js"></script>
+<script src="javascripts/controller/post-manager/post-manager.controller.js"></script>
+<script src="javascripts/controller/update-post/update-post.config.js"></script>
+<script src="javascripts/controller/update-post/update-post.controller.js"></script>
+<script src="javascripts/service/advertisement/advertisement.service.js"></script>
+<script src="javascripts/service/advertisement/detailAdv.service.js"></script>
+<script src="javascripts/service/account/account.service.js"></script>
+<script src="javascripts/service/authentication/authentication.service.js"></script>
+<script src="javascripts/service/category/category.service.js"></script>
+<script src="javascripts/service/chat-service/chat-service.service.js"></script>
+<script src="javascripts/service/bid/bid.service.js"></script>
+<script src="javascripts/service/file/file.service.js"></script>
+<script src="javascripts/service/item-sell/item-sell.service.js"></script>
+<script src="javascripts/service/comment/comment.service.js"></script>
+<script src="javascripts/service/message-service/message-customer-service.service.js"></script>
+<script src="javascripts/service/notification/notification.service.js"></script>
+<script src="javascripts/service/order/order.service.js"></script>
+<script src="javascripts/service/rating/rating.service.js"></script>
+<script src="javascripts/service/request/request.service.js"></script>
+<script src="javascripts/service/user/user.service.js"></script>
+<script src="javascripts/service/user-role/user-role.service.js"></script>
+<script src="javascripts/directive/table/table.directive.js"></script>
+<script src="javascripts/controller/login-page/login-page.config.js"></script>
+<script src="javascripts/controller/login-page/login-page.controller.js"></script>
+<script src="javascripts/controller/post-tin/post-tin.config.js"></script>
+<script src="javascripts/controller/post-tin/post-tin.controller.js"></script>
+<script src="javascripts/directive/pro-table/pro-table.directive.js"></script>
+<script src="javascripts/directive/pro-table/pro-body/pro-body.directive.js"></script>
+<script src="javascripts/directive/pro-table/pro-header/pro-header.directive.js"></script>
+<script src="javascripts/directive/pro-table/pro-pagination/pagination.directive.js"></script>
+<script src="style/js/angular-loading.min.js"></script>
+<script src="style/js/angular-slick.js"></script>
+<script src="style/js/angular-spinner.min.js"></script>
+<script src="style/js/angular-toastr.tpls.js"></script>
+<script src="style/js/app.min.js"></script>
+<script src="style/js/bootstrap-datetimepicker.min.js"></script>
+<script src="style/js/demo.js"></script>
+<script src="style/js/jquery.bxslider.min.js"></script>
+<script src="style/js/loading-bar.min.js"></script>
+<script src="style/js/select2.full.min.js"></script>
+<script src="style/js/spin.js"></script>
+<!-- endinject -->
+
+</html>

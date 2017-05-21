@@ -1,0 +1,33 @@
+/*.customer-page-title{
+    text-transform: uppercase;
+    font-weight: 400 !important;
+}*/
+
+/*.modal-content, .modal-lg{
+    margin-left: -180px !important;
+}*/
+#progress-order{
+    height: 40px;
+}
+.icon-material{
+    margin-top: 10px;   
+    /*padding-right: 2px;*/
+}
+.md-info{
+    background-color: rgb(64, 178, 255) !important;
+}
+.md-success{
+    background-color: limegreen !important;
+}
+
+.md-button.md-fab.md-mini {
+    width: 35px !important;
+    height: 35px !important;
+}
+.select2-selection--single{
+    height: 34px !important;
+    border-radius: 0% !important;
+}
+.select2-selection__rendered{
+    float: left !important;
+}

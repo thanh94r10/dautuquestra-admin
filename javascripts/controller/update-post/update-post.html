@@ -1,0 +1,48 @@
+<div class="box box-solid">
+    <div class="box-header with-border">
+        <h3 class="box-title">Tạo 1 tin mới</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form role="form">
+        <div class="box-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Chọn loại tin</label>
+                <!--<select id="id_label_single" ng-options="cate as cate.name for cate in vm.listCates track by cate.id" 
+                class="form-control" ng-model="vm.category" ng-change="vm.chooseCate(cate)"
+                name="UnitGeneric" id=""></select>-->
+                <select ng-model="vm.category" class="form-control select2" id="id_label_single" style="width: 100%;">
+                    <option ng-repeat="cate in vm.listCates" value="{{cate.id}}">{{cate.name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Tiêu đề bài viết</label>
+                <input type="text" ng-model="vm.Title" class="form-control" id="exampleInputPassword1" >
+            </div>
+            <div class="form-group">
+                <label for="">Mô tả ngắn</label>
+                <textarea rows="5" type="text" ng-model="vm.shortDesc" class="form-control" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Nội dung</label>
+                <div id="DescEditor">
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">File hình ảnh</label>
+                <input class="btn btn-info" file-model="vm.Avatar" type="file" onchange="angular.element(this).scope().photoChanged(this.files)">
+            </div>
+            <div class="">
+                <input file-model="vm.imagePost" style="display: none;" type="file" id="fileUpload" onchange="angular.element(this).scope().photoChanged(this.files)"><br>
+                <div for="fileUpload" style="cursor: pointer;">
+                <img class="" ng-src="{{vm.Avatar}}" style="width: 100px; height: 100px;" alt="Hình ảnh của tin">
+            </div>
+        </div>
+        <!-- /.box-body -->
+
+        <div class="box-footer">
+            <button type="submit" ng-click="vm.updatePost()" class="btn btn-primary">Cập nhật</button>
+        </div>
+    </form>
+</div>

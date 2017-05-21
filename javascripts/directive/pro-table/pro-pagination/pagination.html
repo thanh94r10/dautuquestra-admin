@@ -1,0 +1,18 @@
+<div class="row pro-pagination">
+    <div class="col-md-6 text-left">
+        <div class="pagination-panel ng-binding">
+
+            <span>Xem <select class="floating-box form-control input-xsmall input-sm input-inline" id="select" ng-model="vm.amountRecord" ng-options="item for item in vm.amountRecordArray"
+                ng-change="vm.changeAmount(vm.amountRecord)"> </select>&nbsp; kết quả</span>
+        </div>
+    </div>
+    <div class="col-md-6 text-right">
+        <div class="pagination-panel">
+            <ul class="pagination pagination-sm man css-paging-footer">
+                <li><a class="btn btn-default" ng-click="vm.leftPageFunction()">&laquo;</a></li>
+                <li ng-repeat="i in _.range(vm.proPagination.totalPage)" ng-class="vm.activeItem[i]"><a class="btn btn-info" ng-click="vm.setPage(i)">{{i+1}}</a></li>
+                <li><a class="btn btn-default" ng-click="vm.rightPageFunction()">&raquo;</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

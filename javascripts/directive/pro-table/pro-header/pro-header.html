@@ -1,0 +1,14 @@
+<div class="pro-header">
+    <tr>
+        <th style="font-weight: bold !important; color: black !important; text-align: center;" width="3%">#</th>
+        <th style="font-weight: bold !important; color: black !important" ng-repeat="title in vm.titleList track by $index" ng-click="vm.checkSortType($index)" width="{{vm.headerWidthList[$index]}}">
+            <span>{{vm.translateTitleList[$index]|translate}} </span>
+            <span ng-if="vm.sortAction != undefined" class="sortHeader">
+                <i class="fa fa-unsorted  pull-right" ng-show="vm.ascentFlag[$index] == 0" ng-data-click="vm.checkSortType($index)"></i>
+                <i class="fa fa-sort-asc  pull-right" ng-show="vm.ascentFlag[$index] == 1" ng-data-click="vm.checkSortType($index)"></i>
+                <i class="fa fa-sort-desc pull-right" ng-show="vm.ascentFlag[$index] == -1" ng-data-click="vm.checkSortType($index)"></i>
+            </span>
+        </th>
+        <th style="font-weight: bold !important; color: black !important" ng-if="vm.actionHeader">{{'Action'|translate}}</th>
+    </tr>
+</div>

@@ -1,0 +1,25 @@
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right" ng-if="vm.searchShow">
+            <div class="tb-group-actions pull-right">
+                <form class="form-horizontal form-bordered" ng-submit="vm.searchFunction(vm.searchText)">
+                    <div class="input-icon right">
+                        <i data-hover="tooltip" class="glyphicon glyphicon-search tooltips"></i>
+                        <input type="text" name="" id="input" class="form-control input-inline " ng-model="vm.searchText">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="pro-table">
+        <div class="table-responsive">
+            <table style="margin-top: 15px" class="table table-striped table-hover-color table-bordered table-advanced">
+                <thead pro-header="vm.option.header">
+                </thead>
+                <tbody pro-body="vm.option.body">
+                </tbody>
+            </table>
+        </div>
+        <div ng-if="vm.option.pagination !== undefined" pro-pagination="vm.option.pagination"></div>
+    </div>    
+</div>
