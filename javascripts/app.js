@@ -3,7 +3,8 @@
         'ui.router',
         'ngStorage',
         'ui.bootstrap',
-        'ngSanitize'
+        'ngSanitize',
+        'angular-loading-bar'
     ]).run(init);
 
     init.$inject = ['$rootScope', '$location', '$window'];

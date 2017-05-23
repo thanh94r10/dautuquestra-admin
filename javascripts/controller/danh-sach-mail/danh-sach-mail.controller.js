@@ -10,7 +10,7 @@
     function ListMailController($state, $scope, advertisementService,
         $localStorage, postService, categoryService, $timeout) {
         var vm = this;
-
+        vm.filter = '';
         vm.listEmail = [];
 
         vm.selectedall = false;

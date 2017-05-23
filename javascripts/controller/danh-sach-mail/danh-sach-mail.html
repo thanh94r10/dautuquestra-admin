@@ -23,7 +23,7 @@
 					<form class="form-horizontal form-bordered" ng-submit="vm.searchFunction()">
 						<div class="input-icon right">
 							<i data-hover="tooltip" class="glyphicon glyphicon-search tooltips"></i>
-							<input type="text" name="" id="input" class="form-control input-inline " ng-model="vm.searchText">
+							<input type="text" name="" id="input" class="form-control input-inline " ng-model="vm.filter">
 						</div>
 					</form>
 				</div>
@@ -39,7 +39,7 @@
 						<th style="font-weight: bold !important; color: black !important" width="10%">Chọn</th>
 						<th style="font-weight: bold !important; color: black !important" width="10%">Xóa</th>
 					</tr>
-					<tr ng-repeat="content in vm.listEmail track by $index" ng-if="vm.listEmail.length > 0">
+					<tr ng-repeat="content in vm.listEmail | filter : vm.filter" ng-if="vm.listEmail.length > 0">
 						<td style="vertical-align: middle; text-align: center">{{($index + 1)}}</td>
 						<td class="table-fontBlack" width="">{{content.Email}}</td>
 						<td class="table-fontBlack" width="">

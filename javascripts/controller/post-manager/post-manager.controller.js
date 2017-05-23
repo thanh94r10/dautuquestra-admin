@@ -3,12 +3,12 @@
         .module('app')
         .controller('PostManagerController', PostManagerController);
 
-    PostManagerController.$injector = ['$state', '$scope', 
-    'advertisementService', '$localStorage', 'postService', 'categoryService'
+    PostManagerController.$injector = ['$state', '$scope',
+        'advertisementService', '$localStorage', 'postService', 'categoryService'
     ];
 
-    function PostManagerController($state, $scope, advertisementService, 
-    $localStorage, postService, categoryService) {
+    function PostManagerController($state, $scope, advertisementService,
+        $localStorage, postService, categoryService) {
         var vm = this;
         vm.sorting = sorting;
         vm.paging = paging;
@@ -23,7 +23,7 @@
         vm.getListCategories = getListCategories;
         vm.listCates = [];
         vm.changeCate = changeCate;
-        
+
         getListCategories();
 
         init();
@@ -60,14 +60,14 @@
             getListPost(vm.cateId, field, page, amount);
         }
 
-        function changeCate(){
+        function changeCate() {
             getListPost(vm.cateId, vm.header.sort, vm.pagination.page, vm.pagination.amount);
         }
 
         function getListPost(cateId, field, page, amount) {
             function successCallback(response) {
                 if (response.status === 200) {
-                    
+
                     vm.body.contentList = response.data.Data;
                     vm.totalPage = response.data.TotalPage;
                     vm.page = response.data.Page;
@@ -116,6 +116,32 @@
 
             }
             categoryService.GetCategories().then(successCallBack, errorCallBack);
+        }
+
+        vm.deletePost = function (id) {
+            swal({
+                title: "Xác nhận xóa?",
+                text: "Khi xóa bạn sẽ không thể khôi phục tin này!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Vâng, xóa nó!",
+                cancelButtonText: "Không, hủy xóa!",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function (isConfirm) {
+                if (isConfirm) {
+                    postService.deletePost(id).then(function(response){
+                        if(response.status === 200){
+                            getListPost(vm.cateId, vm.header.sort, vm.pagination.page, vm.pagination.amount);
+                            swal("Deleted!", "Bài đăng đã xóa thành công!", "success");
+                        }
+                    });
+                } else {
+                    swal("Đã hủy", "Tin của bạn được giữ lại :)", "error");
+                }
+            });
         }
 
     }

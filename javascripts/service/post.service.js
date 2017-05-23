@@ -15,7 +15,8 @@
             getPostById: getPostById,
             updatePost: updatePost,
             getAllEmailsRegister: getAllEmailsRegister,
-            sendMail: sendMail
+            sendMail: sendMail,
+            deletePost: deletePost
         };
 
         return service;
@@ -105,6 +106,18 @@
                 return response;
             }
             return $http.post('/api/PostNews/sendMail', model)
+                .then(successCallBack, errorCallBack);
+        }
+        
+        function deletePost(id){
+            function successCallBack(response) {
+                return response;
+            }
+
+            function errorCallBack(response) {
+                return response;
+            }
+            return $http.delete('/api/PostNews/deletePost?postId=' + id)
                 .then(successCallBack, errorCallBack);
         }
         

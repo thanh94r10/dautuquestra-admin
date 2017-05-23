@@ -51,7 +51,7 @@
 						<!--<td class="table-fontBlack" width="">{{((content.Status === 0)? 'Order.Save_Draft' :'') | translate}}</td>-->
 						<td>
 							<button class="btn btn-info" ng-click="vm.viewDetail(content.id)" title="Xem chi tiết"><i class="fa fa-search"></i></button>
-							<button class="btn btn-danger" title="Xóa"><i class="fa fa-trash-o"></i></button>
+							<button class="btn btn-danger" ng-click="vm.deletePost(content.id)" title="Xóa"><i class="fa fa-trash-o"></i></button>
 						</td>
 					</tr>
 					<tr ng-if="vm.body.contentList.length === 0">
