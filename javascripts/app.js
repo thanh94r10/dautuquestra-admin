@@ -3,8 +3,7 @@
         'ui.router',
         'ngStorage',
         'ui.bootstrap',
-        'ngSanitize',
-        'toastr'
+        'ngSanitize'
     ]).run(init);
 
     init.$inject = ['$rootScope', '$location', '$window'];

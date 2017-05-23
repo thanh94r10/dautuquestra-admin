@@ -4,10 +4,10 @@
         .controller('UpdatePostController', UpdatePostController);
 
     UpdatePostController.$inject = ['$http', '$state', '$scope', 'postService',
-        'accountService', 'fileService', 'toastr', '$localStorage', 'categoryService', '$timeout', '$stateParams'];
+        'accountService', 'fileService', '$localStorage', 'categoryService', '$timeout', '$stateParams'];
 
     function UpdatePostController($http, $state, $scope, postService,
-        accountService, fileService, toastr, $localStorage, categoryService, $timeout, $stateParams) {
+        accountService, fileService, $localStorage, categoryService, $timeout, $stateParams) {
         var vm = this;
         vm.category = '';
         vm.post = {};
@@ -93,7 +93,7 @@
                 Description: $('<div/>').text(content).html(),
                 IdPoster: vm.IdPoster,
                 IdCate: vm.category,
-                shortDesc : vm.shortDesc
+                shortDesc: vm.shortDesc
             };
 
             // // upload avatar
@@ -108,12 +108,21 @@
 
             function successCallBack(response) {
                 if (response.status === 200) {
-                    toastr.success('Tạo tin mới thành công');
+                    swal({
+                        title: "Thành công!",
+                        text: "Cập nhật tin thành công!",
+                        type: "success",
+                        confirmButtonColor: "#64B9A1",
+                        confirmButtonText: "Ok",
+                        closeOnConfirm: true
+                    },
+                        function () {
+                            $state.go('start.post-manager');
+                        });
                 }
             }
 
             function errorCallBack(response) {
-                toastr.error('Update profile failed! Error ' + response.status, 'Notification!');
             }
 
             postService.updatePost(form).then(successCallBack, errorCallBack);

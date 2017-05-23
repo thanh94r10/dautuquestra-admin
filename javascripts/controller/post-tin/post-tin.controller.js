@@ -41,11 +41,11 @@
 
     PostTinController.$inject = ['$http', '$state', '$scope', 'userService',
         'advertisementService', 'accountService', '$localStorage', 'postService',
-        'requestService', 'CONSTANT', '$timeout', 'categoryService', 'toastr'];
+        'requestService', 'CONSTANT', '$timeout', 'categoryService'];
 
     function PostTinController($http, $state, $scope, userService,
         advertisementService, accountService, $localStorage, postService,
-        requestService, CONSTANT, $timeout, categoryService,toastr) {
+        requestService, CONSTANT, $timeout, categoryService) {
         var vm = this;
         vm.files = [];
         vm.listCates = [];
@@ -104,15 +104,28 @@
 
             function successCallBack(response){
                 if(response.status === 200){
-                    toastr.success('Tạo tin mới thành công');
+                    notiSuccess();
                 }
             }
 
             function errorCallBack(response) {
-                toastr.error('Update profile failed! Error ' + response.status, 'Notification!');
             }
 
             postService.createPost(form).then(successCallBack, errorCallBack);
+        }
+
+        function notiSuccess(){
+            swal({
+                title: "Thành công!",
+                text: "Đăng tin thành công!",
+                type: "success",
+                confirmButtonColor: "#64B9A1",
+                confirmButtonText: "Ok",
+                closeOnConfirm: true
+            },
+            function () {
+                $state.go('start.post-manager');
+            });
         }
 
         $scope.fileReaderSupported = window.FileReader != null;

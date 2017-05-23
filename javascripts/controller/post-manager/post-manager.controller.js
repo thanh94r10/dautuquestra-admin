@@ -3,11 +3,11 @@
         .module('app')
         .controller('PostManagerController', PostManagerController);
 
-    PostManagerController.$injector = ['$state', 'toastr', '$scope', 
+    PostManagerController.$injector = ['$state', '$scope', 
     'advertisementService', '$localStorage', 'postService', 'categoryService'
     ];
 
-    function PostManagerController($state, toastr, $scope, advertisementService, 
+    function PostManagerController($state, $scope, advertisementService, 
     $localStorage, postService, categoryService) {
         var vm = this;
         vm.sorting = sorting;

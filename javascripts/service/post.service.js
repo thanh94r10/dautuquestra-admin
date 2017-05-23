@@ -13,7 +13,9 @@
             createPost: createPost,
             getAllPosts: getAllPosts,
             getPostById: getPostById,
-            updatePost: updatePost
+            updatePost: updatePost,
+            getAllEmailsRegister: getAllEmailsRegister,
+            sendMail: sendMail
         };
 
         return service;
@@ -40,7 +42,7 @@
 
             function successCallBack(response) {
                 angular.forEach(response.data.Data, function (element) {
-                    element.image = CONSTANT.BASE_URL.substr(1) + element.image.substr(1);
+                    element.image = CONSTANT.BASE_URL + element.image.substr(1);
                 });
                 return response;
             }
@@ -80,6 +82,30 @@
                 console.log(error);
                 return error;
             }
+        }
+
+        function getAllEmailsRegister(){
+            function successCallBack(response) {
+                return response;
+            }
+
+            function errorCallBack(response) {
+                return response;
+            }
+            return $http.get('/api/PostNews/getAllEmailsRegister')
+                .then(successCallBack, errorCallBack);
+        }
+
+        function sendMail(model){
+            function successCallBack(response) {
+                return response;
+            }
+
+            function errorCallBack(response) {
+                return response;
+            }
+            return $http.post('/api/PostNews/sendMail', model)
+                .then(successCallBack, errorCallBack);
         }
         
     }
