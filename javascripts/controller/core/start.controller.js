@@ -18,6 +18,12 @@
         if($localStorage.token === null || $localStorage.token === undefined){
             $state.go('login');
         }
+
+        vm.logout = function(){
+            $localStorage.$reset();
+            $state.go('login');
+        }
+
    // process for admin 
 
     }
