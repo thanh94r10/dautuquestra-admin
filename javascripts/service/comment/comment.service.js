@@ -14,7 +14,8 @@
             createComment: createComment,
             editComment: editComment,
             deleteComment: deleteComment,
-            createReply: createReply
+            createReply: createReply,
+            getAllComments: getAllComments
         };
         return service;
 
@@ -25,24 +26,6 @@
                 sort = 'timeComment_desc';
             }
             function successCallBack(response) {
-                angular.forEach(response.data.Data, function (comment) {
-                    if (comment.CustomerComment.avatar === null) {
-                        comment.CustomerComment.avatar = 'style/icon/user.jpg';
-                    } else {
-                        comment.CustomerComment.avatar = CONSTANT.BASE_URL + comment.CustomerComment.avatar.substr(1);
-                    }
-                    if (comment.listReply === null) {
-                        comment.hasReply = false;
-                    } else {
-                        angular.forEach(comment.listReply, function (reply) {
-                            if (reply.CustomerReply.avatar === null) {
-                                reply.CustomerReply.avatar = 'style/icon/user.jpg';
-                            } else {
-                                reply.CustomerReply.avatar = CONSTANT.BASE_URL + reply.CustomerReply.avatar.substr(1);
-                            }
-                        });
-                    }
-                });
                 return response;
             }
 
@@ -50,6 +33,18 @@
                 return response;
             }
             return $http.get('api/Comment/getListComments?itemSellId=' + ItemId + '&sort=' + sort + '&page=' + page + '&amount=' + amount)
+                .then(successCallBack, errorCallBack);
+        }
+
+        function getAllComments(sort, page, amount ){                                                                                      
+            function successCallBack(response) {
+                return response;
+            }
+
+            function errorCallBack(response) {
+                return response;
+            }
+            return $http.get('api/Comment/getAllComments?sort=' + sort + '&page=' + page + '&amount=' + amount)
                 .then(successCallBack, errorCallBack);
         }
 

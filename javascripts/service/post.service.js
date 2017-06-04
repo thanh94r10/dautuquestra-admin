@@ -16,7 +16,9 @@
             updatePost: updatePost,
             getAllEmailsRegister: getAllEmailsRegister,
             sendMail: sendMail,
-            deletePost: deletePost
+            deletePost: deletePost,
+            getAllComments: getAllComments,
+            deleteComment: deleteComment
         };
 
         return service;
@@ -69,6 +71,21 @@
                 .then(successCallBack, errorCallBack);
         }
 
+        function getAllComments(sort, page, amount ){                                                                                      
+            function successCallBack(response) {
+                // angular.forEach(response.data.Data, function (element) {
+                //     element.image = CONSTANT.BASE_URL + element.image.substr(1);
+                // });
+                return response;
+            }
+
+            function errorCallBack(response) {
+                return response;
+            }
+            return $http.get('/api/Comment/getAllComments?sort=' + sort + '&page=' + page + '&amount=' + amount)
+                .then(successCallBack, errorCallBack);
+        }
+
         function updatePost(formData) {
             return $http.put('/api/PostNews/UpdatePostNew', formData, {
                 transformRequest: angular.identity,
@@ -118,6 +135,18 @@
                 return response;
             }
             return $http.delete('/api/PostNews/deletePost?postId=' + id)
+                .then(successCallBack, errorCallBack);
+        }
+
+        function deleteComment(id){
+            function successCallBack(response) {
+                return response;
+            }
+
+            function errorCallBack(response) {
+                return response;
+            }
+            return $http.delete('/api/Comment/deleteComment?cmtId=' + id)
                 .then(successCallBack, errorCallBack);
         }
         
