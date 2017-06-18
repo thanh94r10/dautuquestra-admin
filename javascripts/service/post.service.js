@@ -18,7 +18,8 @@
             sendMail: sendMail,
             deletePost: deletePost,
             getAllComments: getAllComments,
-            deleteComment: deleteComment
+            deleteComment: deleteComment,
+            deleteMail: deleteMail
         };
 
         return service;
@@ -147,6 +148,18 @@
                 return response;
             }
             return $http.delete('/api/Comment/deleteComment?cmtId=' + id)
+                .then(successCallBack, errorCallBack);
+        }
+
+        function deleteMail(id){
+            function successCallBack(response) {
+                return response;
+            }
+
+            function errorCallBack(response) {
+                return response;
+            }
+            return $http.delete('/api/PostNews/deleteEmail?emailId=' + id)
                 .then(successCallBack, errorCallBack);
         }
         

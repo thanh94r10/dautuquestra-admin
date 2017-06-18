@@ -105,5 +105,23 @@
             postService.sendMail(model).then(successCallBack, errorCallBack);
 
         }
+
+        vm.deleteMail =  function(id){
+
+            function successCallBack(response){
+                if(response.status === 200){
+                    vm.listEmail = [];
+                    swal("Thành công!", "Xóa mail thành công!", "success");
+                    getAllEmailsRegister();
+                }
+            }
+
+            function errorCallBack(response){
+                swal("Oops!", "Có lỗi khi xóa mail!", "error");
+            }
+            
+            postService.deleteMail(id).then(successCallBack, errorCallBack);
+        }
+
     }
 })();

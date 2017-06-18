@@ -52,7 +52,7 @@
 						</td>
 						<!--<td class="table-fontBlack" width="">{{((content.Status === 0)? 'Order.Save_Draft' :'') | translate}}</td>-->
 						<td>
-							<button ng-click="vm.viewDetail(content.id)" class="btn btn-danger" title="Xóa"><i class="fa fa-trash-o"></i></button>
+							<button ng-click="vm.deleteMail(content.Id)" class="btn btn-danger" title="Xóa"><i class="fa fa-trash-o"></i></button>
 						</td>
 					</tr>
 					<tr ng-if="vm.listEmail.length === 0">
